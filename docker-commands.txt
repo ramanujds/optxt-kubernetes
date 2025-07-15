@@ -9,7 +9,11 @@ docker run -p 5000:5000 -d --name=spring-boot ram1uj/spring-boot
 docker run -it ubuntu bash
 
 
-docker build --platform linux/amd64 -t ram1uj/hello-spring .
+docker build -t hello-spring .
+
+
+
+docker tag hello-spring ram1uj/hello-spring
 
 docker push ram1uj/hello-spring
 
