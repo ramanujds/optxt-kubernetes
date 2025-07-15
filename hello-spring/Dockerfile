@@ -1,11 +1,4 @@
-# Build stage
-FROM maven:3.9.6-eclipse-temurin-21 AS build
+FROM openjdk:21-slim
 WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
-
-# Run stage
-FROM openjdk:21-jdk-slim
-WORKDIR /
-COPY --from=build /app/target/*.jar app.jar
-CMD ["java", "-jar", "app.jar"]
+COPY target/hello-spring-0.0.1-SNAPSHOT.jar app.jar
+CMD ["java","-jar","app.jar"]
