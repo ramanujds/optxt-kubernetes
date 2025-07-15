@@ -26,6 +26,21 @@ docker login
 docker run -d -e MYSQL_ROOT_PASSWORD=password --name=mysql mysql
 
 
+image - ram1uj/notes-app-user-service
+
+port - 8200
+
+docker run -p 8200:8200 \
+--network=app-network \
+--name=user-service -d \
+-e DB_HOST=mysql \
+-e DB_PORT=3306 \
+-e DB_NAME=notes \
+-e DB_USER=root \
+-e DB_PASSWORD=password \
+ram1uj/notes-app-user-service
+
+
 
 
 
