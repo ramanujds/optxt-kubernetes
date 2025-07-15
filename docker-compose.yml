@@ -3,12 +3,27 @@ networks:
   app-network:
 
 services:
-  easy-recipes:
-    image: ram1uj/easy-recipes
+  mysql:
+    image: mysql
     restart: always
-    ports:
-      - "8000:8080"
     networks:
       - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: notes
 
-
+  user-service:
+    image: ram1uj/notes-app-user-service
+    restart: always
+    ports:
+      - "8200:8200"
+    networks:
+      - app-network
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: notes
+      DB_USER: root
+      DB_PASSWORD: password
+    depends_on:
+      - mysql
