@@ -2,8 +2,8 @@ https://github.com/ramanujds/optxt-kubernetes
 
 docker pull ram1uj/easy-recipes
 
-docker run -p 3000:8080 -d ram1uj/easy-recipes
+docker run -p 3000:8080 -d --name=easy-recipes ram1uj/easy-recipes
 
-docker run -p 8000:5000 -d ram1uj/spring-boot
+docker run -p 5000:5000 -d --name=spring-boot ram1uj/spring-boot
 
 docker run -it ubuntu bash
