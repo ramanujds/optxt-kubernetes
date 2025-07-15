@@ -30,6 +30,7 @@ image - ram1uj/notes-app-user-service
 
 port - 8200
 
+
 docker run -p 8200:8200 \
 --network=app-network \
 --name=user-service -d \
@@ -40,7 +41,7 @@ docker run -p 8200:8200 \
 -e DB_PASSWORD=password \
 ram1uj/notes-app-user-service
 
-
+docker network connect app-network mysql
 
 
 
