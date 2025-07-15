@@ -23,12 +23,14 @@ docker push ram1uj/hello-spring
 
 docker login
 
-docker run -d -e MYSQL_ROOT_PASSWORD=password --name=mysql mysql
+docker network create app-network
 
-
-image - ram1uj/notes-app-user-service
-
-port - 8200
+docker run -d \
+-e MYSQL_ROOT_PASSWORD=password \
+--network=app-network \
+-e MYSQL_DATABASE=notes \
+--name=mysql \
+mysql
 
 
 docker run -p 8200:8200 \
