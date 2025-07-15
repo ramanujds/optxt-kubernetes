@@ -1,0 +1,14 @@
+name: 'my-app'
+networks:
+  app-network:
+
+services:
+  easy-recipes:
+    image: ram1uj/easy-recipes
+    restart: always
+    ports:
+      - "8000:8080"
+    networks:
+      - app-network
+
+
