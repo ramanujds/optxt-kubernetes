@@ -25,10 +25,13 @@ docker login
 
 docker network create app-network
 
+docker volume create mysql-data
+
 docker run -d \
 -e MYSQL_ROOT_PASSWORD=password \
 --network=app-network \
 -e MYSQL_DATABASE=notes \
+--volume= mysql-data:/var/lib/mysql
 --name=mysql \
 mysql
 
