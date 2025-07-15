@@ -15,8 +15,23 @@ docker build -t hello-spring .
 
 
 
+
+
 docker tag hello-spring ram1uj/hello-spring
 
 docker push ram1uj/hello-spring
 
 docker login
+
+docker run -d -e MYSQL_ROOT_PASSWORD=password --name=mysql mysql
+
+
+
+
+
+
+
+
+
+
+
