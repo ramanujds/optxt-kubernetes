@@ -12,9 +12,15 @@ Get the status of the pod with more details
 
 kubectl get pods -o wide
 
+Connect one pod to another
+
 kubectl exec easy-recipes -- sh
+curl 10.1.0.14:5000/message
 
 or
 
 kubectl exec -it easy-recipes -- curl 10.1.0.14:5000/message
 
+Create a service for the pod
+
+kubectl expose pod spring-boot --port=5000
