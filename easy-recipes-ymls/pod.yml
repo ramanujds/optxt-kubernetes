@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: easy-recipes-pod
+
+spec:
+  containers:
+    - name: easy-recipes-container
+      image: easy-recipes-image:latest
+      ports:
+        - containerPort: 8080

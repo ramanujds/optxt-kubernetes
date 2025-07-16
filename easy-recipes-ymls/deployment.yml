@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: easy-recipes-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+          app: easy-recipes
+    template:
+      metadata:
+            labels:
+              app: easy-recipes
+      spec:
+        containers:
+          - name: easy-recipes-container
+            image: ram1uj/spring-boot
+            ports:
+              - containerPort: 5000
