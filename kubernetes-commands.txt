@@ -14,3 +14,7 @@ kubectl get pods -o wide
 
 kubectl exec easy-recipes -- sh
 
+or
+
+kubectl exec -it easy-recipes -- curl 10.1.0.14:5000/message
+
