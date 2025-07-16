@@ -1,0 +1,16 @@
+Start a pod
+
+kubectl run easy-recipes --image=ram1uj/easy-recipes
+
+Get the status of the pod
+
+kubectl get pods
+
+kubectl run spring-boot --image=ram1uj/spring-boot
+
+Get the status of the pod with more details
+
+kubectl get pods -o wide
+
+kubectl exec easy-recipes -- sh
+
