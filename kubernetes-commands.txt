@@ -40,3 +40,7 @@ kubectl exec -it easy-recipes -- netstat -tuln
 Create a deployment for the pod
 
 kubectl create deployment easy-recipes --image=ram1uj/easy-recipes
+
+kubectl get deployments
+
+kubectl expose deployment easy-recipes --target-port=5000 --port=80 --type=NodePort
