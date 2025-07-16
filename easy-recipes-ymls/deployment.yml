@@ -14,6 +14,6 @@ spec:
       spec:
         containers:
           - name: easy-recipes-container
-            image: ram1uj/spring-boot
+            image: ram1uj/easy-recipes:latest
             ports:
-              - containerPort: 5000
+              - containerPort: 8080

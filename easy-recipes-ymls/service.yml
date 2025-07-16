@@ -7,5 +7,5 @@ spec:
         app: easy-recipes
     ports:
         - port: 80
-          targetPort: 5000
+          targetPort: 8080
     type: NodePort
