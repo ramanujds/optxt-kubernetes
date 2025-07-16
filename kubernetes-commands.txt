@@ -28,3 +28,15 @@ kubectl expose pod spring-boot --target-port=5000 --port=80 --type=NodePort
 Get the service details
 
 kubectl get svc
+
+
+know the active port on with the application is running
+
+netstat -tuln
+
+kubectl exec -it easy-recipes -- netstat -tuln
+
+
+Create a deployment for the pod
+
+kubectl create deployment easy-recipes --image=ram1uj/easy-recipes
